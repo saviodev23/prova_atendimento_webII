@@ -10,6 +10,7 @@ class AtendimentoViewSet(viewsets.ModelViewSet):
     queryset = Atendimento.objects.all()
     serializer_class = AtendimentoSerializer
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
+    ordering_fields = ['profissional']#ordenando atendimento por profissional
     search_fields = ['id', ]#possibilita fazer a busca por id
     authentication_classes = [BasicAuthentication]
     permission_classes = [permissions.IsAuthenticated]

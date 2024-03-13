@@ -10,6 +10,7 @@ class ProfissionalViewSet(viewsets.ModelViewSet):
     queryset = Profissional.objects.all()
     serializer_class = ProfissionalSerializer
     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
-    search_fields = ['id']#possibilita fazer a busca por id
+    ordering_fields = ['nome']#ordenando os profissionais por nome
+    search_fields = ['id', 'nome']#possibilita fazer a busca por nome e id
     authentication_classes = [BasicAuthentication]
     permission_classes = [permissions.IsAuthenticated]
