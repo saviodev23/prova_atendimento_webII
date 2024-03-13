@@ -9,4 +9,4 @@ class ProfissionalSerializer(serializers.ModelSerializer):
 class AtendimentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atendimento
-        fields = '__all__'
+        fields = ['profissional', 'data', 'hora', 'cliente', 'obs']
